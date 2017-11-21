@@ -83,4 +83,16 @@ import UIKit
                         radius: 3.0,
                         opacity: 0.4)
     }
+    
+    /**
+     Create none shadow
+     
+     - returns: dark SJShadow object
+     */
+    open class func none() -> SJShadow {
+        return SJShadow(offset: CGSize(width: 0, height: 0),
+                        color: UIColor.clear,
+                        radius: 0.0,
+                        opacity: 0.0)
+    }
 }

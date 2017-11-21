@@ -181,7 +181,7 @@ class SJSegmentView: UIScrollView {
         let segmentView = getSegmentTabForController(controller)
         segmentView.tag = (index + kSegmentViewTagOffset)
         segmentView.translatesAutoresizingMaskIntoConstraints = false
-        segmentContentView!.addSubview(segmentView)
+        segmentContentView!.insertSubview(segmentView, at: 0)
         
         if segments.count == 0 {
             
@@ -266,7 +266,8 @@ class SJSegmentView: UIScrollView {
 				segmentTab = SJSegmentTab.init(title: "")
 			}
 
-			segmentTab?.backgroundColor = segmentBackgroundColor
+            segmentTab?.backgroundColor = UIColor.clear
+            self.backgroundColor = segmentBackgroundColor
 			segmentTab?.titleColor(titleColor!)
 			segmentTab?.titleFont(font!)
 		}
