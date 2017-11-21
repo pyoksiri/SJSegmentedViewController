@@ -181,7 +181,7 @@ class SJSegmentView: UIScrollView {
         let segmentView = getSegmentTabForController(controller)
         segmentView.tag = (index + kSegmentViewTagOffset)
         segmentView.translatesAutoresizingMaskIntoConstraints = false
-        segmentContentView!.insertSubview(segmentView, at: 0)
+        segmentContentView!.addSubview(segmentView)
         
         if segments.count == 0 {
             
@@ -225,7 +225,7 @@ class SJSegmentView: UIScrollView {
         let segmentView = UIView()
         segmentView.backgroundColor = selectedSegmentViewColor
         segmentView.translatesAutoresizingMaskIntoConstraints = false
-        segmentContentView!.addSubview(segmentView)
+        segmentContentView!.insertSubview(segmentView, at: 0)
         selectedSegmentView = segmentView
         
         xPosConstraints = NSLayoutConstraint(item: segmentView,
